@@ -5,7 +5,6 @@ provider "alicloud" {
   configuration_source    = "terraform-alicloud-modules/mongodb"
   region                  = var.region
 }
-
 resource "alicloud_mongodb_instance" "this" {
   count                = var.create_resources_size
   engine_version       = var.engine_version
