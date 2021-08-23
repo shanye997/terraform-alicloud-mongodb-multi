@@ -62,12 +62,6 @@ resource "mongodb"  this {
 * [using-existing-mongodb-instance](https://github.com/terraform-alicloud-modules/terraform-alicloud-mongodb/tree/master/examples/using-existing-mongocb-instance)
 * [using-submodule-complete](https://github.com/terraform-alicloud-modules/terraform-alicloud-mongodb/tree/master/examples/using-submodule-complete)
 
-## Modules
-
-* [mongodb-3.4-rocksdb](https://github.com/terraform-alicloud-modules/terraform-alicloud-mongodb/tree/master/modules/mongodb-3.4-rocksdb)
-* [mongodb-3.4-wiredtiger](https://github.com/terraform-alicloud-modules/terraform-alicloud-mongodb/tree/master/modules/mongodb-3.4-wiredtiger)
-* [mongodb-4.0-wiredtiger](https://github.com/terraform-alicloud-modules/terraform-alicloud-mongodb/tree/master/modules/mongodb-4.0-wiredtiger)
-* [mongodb-4.2-wiredtiger](https://github.com/terraform-alicloud-modules/terraform-alicloud-mongodb/tree/master/modules/mongodb-4.2-wiredtiger)
 
 ## Notes
 
@@ -77,7 +71,7 @@ If you have not set them yet, please install [aliyun-cli](https://github.com/ali
 
 Authors
 ---------
-Created and maintained by jianqiang.zjq(bj090628@163.com) 
+Created and maintained by maiqiao(bj090628@163.com) 
 
 License
 ----
