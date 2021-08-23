@@ -151,3 +151,4 @@ variable "create_resources_size" {
   type        = string
   default     = "3"
 }
+
