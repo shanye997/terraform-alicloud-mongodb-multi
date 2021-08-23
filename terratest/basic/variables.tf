@@ -139,17 +139,6 @@ variable "instance_id" {
   default     = ""
 }
 
-variable "access_key" {
-  description = "The specification of the monitoring access_key."
-  type        = string
-  default     = "LTAI5tMpQtGxkqUqiFUvrpL5"
-}
-
-variable "secret_key" {
-  description = "The specification of the monitoring secret_key."
-  type        = string
-  default     = "v6t3PL9tMSoIuZvEBHGsUOfZNTwMSk"
-}
 
 variable "region" {
   description = "The specification of the monitoring region."

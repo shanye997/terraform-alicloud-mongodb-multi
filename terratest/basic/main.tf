@@ -3,8 +3,6 @@ provider "alicloud" {
   shared_credentials_file = var.shared_credentials_file != "" ? var.shared_credentials_file : null
   skip_region_validation  = var.skip_region_validation
   configuration_source    = "terraform-alicloud-modules/mongodb"
-  access_key              = var.access_key
-  secret_key              = var.secret_key
   region                  = var.region
 }
 
