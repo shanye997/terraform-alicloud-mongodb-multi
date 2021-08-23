@@ -59,8 +59,6 @@ resource "mongodb"  this {
 ## Examples
 
 * [complete](https://github.com/terraform-alicloud-modules/terraform-alicloud-mongodb/tree/master/examples/complete)
-* [using-existing-mongodb-instance](https://github.com/terraform-alicloud-modules/terraform-alicloud-mongodb/tree/master/examples/using-existing-mongocb-instance)
-* [using-submodule-complete](https://github.com/terraform-alicloud-modules/terraform-alicloud-mongodb/tree/master/examples/using-submodule-complete)
 
 
 ## Notes
