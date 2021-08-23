@@ -1,4 +1,4 @@
-terraform-alicloud-mongodb
+terraform-alicloud-mongodb-mult
 =====================================================================
 
 
@@ -20,6 +20,7 @@ terraform-alicloud-mongodb
 module "mongodb" {
   source               = "terraform-alicloud-modules/mongodb/alicloud"
   region               = "cn-shanghai"
+  count = 2
   ###################
   # MongoDB Instance
   ###################
@@ -47,7 +48,7 @@ module "mongodb" {
 
 ## 示例
 
-* [创建 Mongodb 完整示例](https://github.com/terraform-alicloud-modules/terraform-alicloud-mongodb-mult/tree/master/examples)
+* [创建 Mongodb 完整示例](https://github.com/terraform-alicloud-modules/terraform-alicloud-mongodb-mult/tree/master/example)
 
 
 

@@ -1,8 +1,8 @@
 Terraform module which creates MongoDB instance on Alibaba Cloud  
-terraform-alicloud-mongodb
+terraform-alicloud-mongodb-mult
 =====================================================================
 
-English | [简体中文](https://github.com/terraform-alicloud-modules/terraform-alicloud-mongodb/blob/master/README-cn.md)
+English | [简体中文](https://github.com/terraform-alicloud-modules/terraform-alicloud-mongodb-mult/blob/master/README-cn.md)
 
 Terraform module which creates MongoDB replica instance resources on Alibaba Cloud
 
@@ -25,6 +25,7 @@ For new instance
 resource "mongodb"  this {
   source = "terraform-alicloud-modules/mongodb/alicloud"
   region = "cn-shanghai"
+  count = 2
 
   #################
   # MongoDB Instance
@@ -58,7 +59,7 @@ resource "mongodb"  this {
 
 ## Examples
 
-* [complete](https://github.com/terraform-alicloud-modules/terraform-alicloud-mongodb/tree/master/examples/complete)
+* [complete](https://github.com/terraform-alicloud-modules/terraform-alicloud-mongodb-mult/tree/master/example)
 
 
 ## Notes
