@@ -25,6 +25,7 @@ func TestTerraformBasicExampleNew(t *testing.T) {
 	storageEngine := "WiredTiger"
 	vswitchId := "1"
 	zoneId := "1"
+
 	accountPassword := "test123abc"
 	backupPeriod := ""
 	backupTime := ""
