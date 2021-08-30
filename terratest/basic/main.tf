@@ -1,10 +1,3 @@
-provider "alicloud" {
-  profile                 = var.profile != "" ? var.profile : null
-  shared_credentials_file = var.shared_credentials_file != "" ? var.shared_credentials_file : null
-  skip_region_validation  = var.skip_region_validation
-  configuration_source    = "terraform-alicloud-modules/mongodb"
-  region                  = var.region
-}
 
 resource "alicloud_mongodb_instance" "this" {
   count                = var.create_resources_size

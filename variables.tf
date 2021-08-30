@@ -1,29 +1,3 @@
-#################
-# Provider
-#################
-variable "profile" {
-  description = "The profile name as set in the shared credentials file. If not set, it will be sourced from the ALICLOUD_PROFILE environment variable. "
-  type        = string
-  default     = ""
-}
-
-variable "shared_credentials_file" {
-  description = "This is the path to the shared credentials file. If this is not set and a profile is specified, $HOME/.aliyun/config.json will be used. "
-  type        = string
-  default     = ""
-}
-
-variable "skip_region_validation" {
-  description = "Skip static validation of region ID. Used by users of alternative AlibabaCloud-like APIs or users w/ access to regions that are not public (yet). "
-  type        = bool
-  default     = false
-}
-
-variable "regions" {
-  description = "The specification of the monitoring region list. separated by commas"
-  type        = string
-  default     = "cn-hangzhou"
-}
 
 ##############################################################
 # Mongodb Instance
@@ -55,13 +29,13 @@ variable "storage_engine" {
 variable "name" {
   description = " The name of DB instance. It a string of 2 to 256 characters"
   type        = string
-  default     = ""
+  default     = "testname"
 }
 
 variable "instance_charge_type" {
   description = "The billing method of the instance. Valid values are Prepaid, PostPaid, Default to PostPaid"
   type        = string
-  default     = ""
+  default     = "PostPaid"
 }
 
 variable "period" {
@@ -90,7 +64,7 @@ variable "security_ip_list" {
 variable "account_password" {
   description = "Password of the root account. It is a string of 6 to 32 characters and is composed of letters, numbers, and underlines"
   type        = string
-  default     = ""
+  default     = "test123456_"
 }
 
 variable "replication_factor" {
@@ -102,13 +76,13 @@ variable "replication_factor" {
 variable "backup_period" {
   description = "MongoDB Instance backup period. It is required when backup_time was existed. Valid values: [Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday]. Default to [Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday]. "
   type        = list(string)
-  default     = []
+  default     = ["Monday"]
 }
 
 variable "backup_time" {
   description = "MongoDB instance backup time. It is required when backup_period was existed. In the format of HH:mmZ- HH:mmZ. Time setting interval is one hour. Default to a random time, like '23:00Z-24:00Z'. "
   type        = string
-  default     = ""
+  default     = "01:00Z-02:00Z"
 }
 
 variable "tags" {

@@ -23,7 +23,7 @@ For new instance
 
 ```hcl
 resource "mongodb"  this {
-  source = "terraform-alicloud-modules/mongodb/alicloud"
+  source = "terraform-alicloud-modules/mongodb-mult/alicloud"
   region = "cn-shanghai"
   count = 2
 

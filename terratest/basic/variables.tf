@@ -1,29 +1,3 @@
-#################
-# Provider
-#################
-variable "profile" {
-  description = "The profile name as set in the shared credentials file. If not set, it will be sourced from the ALICLOUD_PROFILE environment variable. "
-  type        = string
-  default     = ""
-}
-
-variable "shared_credentials_file" {
-  description = "This is the path to the shared credentials file. If this is not set and a profile is specified, $HOME/.aliyun/config.json will be used. "
-  type        = string
-  default     = ""
-}
-
-variable "skip_region_validation" {
-  description = "Skip static validation of region ID. Used by users of alternative AlibabaCloud-like APIs or users w/ access to regions that are not public (yet). "
-  type        = bool
-  default     = false
-}
-
-variable "regions" {
-  description = "The specification of the monitoring region list. separated by commas"
-  type        = string
-  default     = "cn-hangzhou"
-}
 
 ##############################################################
 # Mongodb Instance
@@ -55,7 +29,7 @@ variable "storage_engine" {
 variable "name" {
   description = " The name of DB instance. It a string of 2 to 256 characters"
   type        = string
-  default     = "mongo_db_test"
+  default     = "testname"
 }
 
 variable "instance_charge_type" {
@@ -72,7 +46,7 @@ variable "period" {
 variable "zone_id" {
   description = "The ID of the zone. You can refer to https://www.alibabacloud.com/help/doc-detail/61933.htm. "
   type        = string
-  default     = "cn-hangzhou-b"
+  default     = ""
 }
 
 variable "vswitch_id" {
@@ -84,13 +58,13 @@ variable "vswitch_id" {
 variable "security_ip_list" {
   description = " List of IP addresses allowed to access all databases of an instance. The list contains up to 1,000 IP addresses, separated by commas. Supported formats include 0.0.0.0/0, 10.23.12.24 (IP), and 10.23.12.24/24 (Classless Inter-Domain Routing (CIDR) mode. /24 represents the length of the prefix in an IP address. The range of the prefix length is [1,32]). "
   type        = list(string)
-  default     = ["192.168.1.1"]
+  default     = []
 }
 
 variable "account_password" {
   description = "Password of the root account. It is a string of 6 to 32 characters and is composed of letters, numbers, and underlines"
   type        = string
-  default     = "test123abc"
+  default     = "test123456_"
 }
 
 variable "replication_factor" {
@@ -102,13 +76,13 @@ variable "replication_factor" {
 variable "backup_period" {
   description = "MongoDB Instance backup period. It is required when backup_time was existed. Valid values: [Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday]. Default to [Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday]. "
   type        = list(string)
-  default     = ["Monday", "Tuesday"]
+  default     = ["Monday"]
 }
 
 variable "backup_time" {
   description = "MongoDB instance backup time. It is required when backup_period was existed. In the format of HH:mmZ- HH:mmZ. Time setting interval is one hour. Default to a random time, like '23:00Z-24:00Z'. "
   type        = string
-  default     = "23:00Z-24:00Z"
+  default     = "01:00Z-02:00Z"
 }
 
 variable "tags" {
@@ -117,22 +91,17 @@ variable "tags" {
   default     = {}
 }
 
-
 variable "existing_instance_id" {
   description = "The Id of an existing Mongodb instance. If set, the `create` will be ignored. "
   type        = string
   default     = ""
 }
 
-variable "create" {
-  description = "Whether to use an existing MongoDB. If false, you can use a existing Mongodb instance by setting `existing_instance_id`. "
-  type        = bool
-  default     = true
-}
 
 #################
 # Depreceted parameters
 #################
+
 
 variable "instance_id" {
   description = "`(Deprecated)` It has been deprecated from version 1.2.0 and use `existing_instance_id` instead. "
@@ -140,15 +109,16 @@ variable "instance_id" {
   default     = ""
 }
 
-
 variable "region" {
   description = "The specification of the monitoring region."
   type        = string
-  default     = "cn-hangzhou"
+  default     = ""
 }
 
 variable "create_resources_size" {
   description = "The specification of the monitoring region."
   type        = string
-  default     = "3"
+  default     = "1"
 }
+
+
