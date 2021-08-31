@@ -45,7 +45,6 @@ module "mongodb" {
 }
 ```
 
-
 ## 示例
 
 * [创建 Mongodb 完整示例](https://github.com/terraform-alicloud-modules/terraform-alicloud-mongodb-multi/tree/master/example)
