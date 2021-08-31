@@ -1,4 +1,4 @@
-terraform-alicloud-mongodb-mult
+terraform-alicloud-mongodb-multi
 =====================================================================
 
 
@@ -18,7 +18,7 @@ terraform-alicloud-mongodb-mult
 
 ```hcl
 module "mongodb" {
-  source               = "terraform-alicloud-modules/mongodb-mult/alicloud"
+  source               = "terraform-alicloud-modules/mongodb-multi/alicloud"
   region               = "cn-shanghai"
   count = 2
   ###################
@@ -48,7 +48,7 @@ module "mongodb" {
 
 ## 示例
 
-* [创建 Mongodb 完整示例](https://github.com/terraform-alicloud-modules/terraform-alicloud-mongodb-mult/tree/master/example)
+* [创建 Mongodb 完整示例](https://github.com/terraform-alicloud-modules/terraform-alicloud-mongodb-multi/tree/master/example)
 
 
 
