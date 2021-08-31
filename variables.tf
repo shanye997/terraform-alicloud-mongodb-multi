@@ -26,6 +26,7 @@ variable "storage_engine" {
   default     = "WiredTiger"
 }
 
+
 variable "name" {
   description = " The name of DB instance. It a string of 2 to 256 characters"
   type        = string
