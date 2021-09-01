@@ -1,6 +1,3 @@
-data "alicloud_mongodb_instances" "this" {
-  ids = var.existing_instance_id != "" ? [var.existing_instance_id] : null
-}
 locals {
   this_mongodb_instance_engine_version = alicloud_mongodb_instance.this.*.engine_version
   this_db_instance_class               = alicloud_mongodb_instance.this.*.db_instance_class

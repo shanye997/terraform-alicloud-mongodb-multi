@@ -8,9 +8,6 @@ terraform-alicloud-mongodb-multi
 
 * [MongoDB 数据库实例 (mongodb instance)](https://www.terraform.io/docs/providers/alicloud/r/mongodb_instance.html)
 
-## Terraform 版本
-
-本模板要求使用版本 Terraform 0.12 和阿里云 Provider 1.56.0+。
 
 ## 用法
 
@@ -54,6 +51,25 @@ module "mongodb" {
 ## 注意事项
 
 * 本 Module 使用的 AccessKey 和 SecretKey 可以直接从 `profile` 和 `shared_credentials_file` 中获取。如果未设置，可通过下载安装 [aliyun-cli](https://github.com/aliyun/aliyun-cli#installation) 后进行配置.
+
+## Requirements
+
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | > = 0.13.0 |
+| <a name="requirement_alicloud"></a> [alicloud](#requirement\_alicloud) | > = 1.56.0 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| <a name="provider_alicloud"></a> [alicloud](#provider\_alicloud) | > = 1.56.0 |
+
+## Submit Issues
+
+If you have any problems when using this module, please opening
+a [provider issue](https://github.com/aliyun/terraform-provider-alicloud/issues/new) and let us know.
+
 
 作者
 -------

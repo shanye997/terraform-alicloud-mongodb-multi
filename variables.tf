@@ -92,18 +92,6 @@ variable "tags" {
   default     = {}
 }
 
-variable "existing_instance_id" {
-  description = "The Id of an existing Mongodb instance. If set, the `create` will be ignored. "
-  type        = string
-  default     = ""
-}
-
-
-#################
-# Depreceted parameters
-#################
-
-
 variable "instance_id" {
   description = "`(Deprecated)` It has been deprecated from version 1.2.0 and use `existing_instance_id` instead. "
   type        = string

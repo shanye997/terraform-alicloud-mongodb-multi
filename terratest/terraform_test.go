@@ -1,6 +1,8 @@
 package test
 
 import (
+	"fmt"
+	"github.com/gruntwork-io/terratest/modules/random"
 	"testing"
 
 	"github.com/gruntwork-io/terratest/modules/terraform"
@@ -13,47 +15,16 @@ import (
 
 func TestTerraformBasicExampleNew(t *testing.T) {
 	t.Parallel()
-	count := "1"
-	engineVersion := "1.0.0"
-	name := "mongo_db_test"
-	instanceChargeType := "PostPaid"
-	dbInstanceClass := "mongo.x8.medium"
-	dbInstanceStorage := "10"
-	period := "1"
-	securityIpList := "[192.168.1.1]"
-	replicationFactor := "2"
-	storageEngine := "WiredTiger"
-	vswitchId := "1"
-	zoneId := "1"
 
-	accountPassword := "test123abc"
-	backupPeriod := ""
-	backupTime := ""
-	tags := ""
+	name := fmt.Sprintf("tf-test-%d", random.Random(100, 1000))
 
 	terraformOptions := &terraform.Options{
 		// The path to where our Terraform code is located
-		TerraformDir: "./basic/",
+		TerraformDir: "../example/",
 
 		// Variables to pass to our Terraform code using -var options
 		Vars: map[string]interface{}{
-			"count":                count,
-			"engine_version":       engineVersion,
-			"name":                 engineVersion,
-			"instance_charge_type": instanceChargeType,
-			"db_instance_class":   dbInstanceClass,
-			"db_instance_storage": dbInstanceStorage,
-			"period":              period,
-			"security_ip_list":    securityIpList,
-			"replication_factor":  replicationFactor,
-			"storage_engine":      storageEngine,
-			"vswitch_id":          vswitchId,
-			"zone_id":             zoneId,
-			"account_password":    accountPassword,
-			"backup_period":       backupPeriod,
-			"backup_time":         backupTime,
-			"tags":                tags,
-			// We also can see how lists and maps translate between terratest and terraform.
+			"name": name,
 		},
 
 		// Disable colors in Terraform commands, so it's easier to parse stdout/stderr
@@ -68,13 +39,8 @@ func TestTerraformBasicExampleNew(t *testing.T) {
 
 	// Run `terraform output` to get the values of output variables
 	thisName := terraform.Output(t, terraformOptions, "name")
-	thisInstanceType := terraform.Output(t, terraformOptions, "instance_charge_type")
-	thisPassword := terraform.Output(t, terraformOptions, "account_password")
-	thisInstanceStorage := terraform.Output(t, terraformOptions, "db_instance_storage")
 
 	// Verify we're getting back the outputs we expect
 	assert.Equal(t, thisName, name)
-	assert.Equal(t, thisInstanceType, instanceChargeType)
-	assert.Equal(t, thisPassword, accountPassword)
-	assert.Equal(t, thisInstanceStorage, dbInstanceStorage)
+
 }
