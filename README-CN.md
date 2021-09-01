@@ -68,4 +68,3 @@ Apache 2 Licensed. See LICENSE for full details.
 * [Terraform-Provider-Alicloud Release](https://releases.hashicorp.com/terraform-provider-alicloud/)
 * [Terraform-Provider-Alicloud Docs](https://www.terraform.io/docs/providers/alicloud/index.html)
 
-
