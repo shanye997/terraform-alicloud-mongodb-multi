@@ -1,8 +1,36 @@
+#  Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# Module directory
+.terraform/
+
+# terraform log
+*.log
+
+# auto-generated key pair file
+*.pem
+
+# tools files
+.DS_Store
+.idea
+
+# others
+*.bak
+*.bk
+.terraform.lock.hcl
+.terraform.tfstate.lock.info
+
 # Default ignored files
 /shelf/
 /workspace.xml
+
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+
 # Editor-based HTTP Client requests
 /httpRequests/

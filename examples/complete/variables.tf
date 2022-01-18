@@ -1,20 +1,8 @@
 # Mongodb Instance
-variable "create_resources_size" {
-  description = "The specification of the monitoring region."
-  type        = string
-  default     = "1"
-}
-
-variable "engine_version" {
-  description = "The version number of the database. Valid value: 3.2, 3.4, 4.0. "
-  type        = string
-  default     = "4.0"
-}
-
 variable "name" {
   description = " The name of DB instance. It a string of 2 to 256 characters"
   type        = string
-  default     = ""
+  default     = "tf-mongodb-name"
 }
 
 variable "instance_charge_type" {
@@ -32,7 +20,7 @@ variable "db_instance_class" {
 variable "db_instance_storage" {
   description = "The storage space of the instance. Valid values: 10 to 3000. Unit: GB. You can only specify this value in 10 GB increments. "
   type        = number
-  default     = 10
+  default     = 20
 }
 
 variable "period" {
@@ -44,7 +32,7 @@ variable "period" {
 variable "security_ip_list" {
   description = " List of IP addresses allowed to access all databases of an instance. The list contains up to 1,000 IP addresses, separated by commas. Supported formats include 0.0.0.0/0, 10.23.12.24 (IP), and 10.23.12.24/24 (Classless Inter-Domain Routing (CIDR) mode. /24 represents the length of the prefix in an IP address. The range of the prefix length is [1,32]). "
   type        = list(string)
-  default     = []
+  default     = ["127.0.0.1"]
 }
 
 variable "replication_factor" {
@@ -53,28 +41,10 @@ variable "replication_factor" {
   default     = 3
 }
 
-variable "storage_engine" {
-  description = "The MongoDB storage engine, WiredTiger or RocksDB. Default value: WiredTiger. "
-  type        = string
-  default     = "WiredTiger"
-}
-
-variable "vswitch_id" {
-  description = "The virtual switch ID to launch DB instances in one VPC. "
-  type        = string
-  default     = ""
-}
-
-variable "zone_id" {
-  description = "The ID of the zone. You can refer to https://www.alibabacloud.com/help/doc-detail/61933.htm. "
-  type        = string
-  default     = ""
-}
-
 variable "account_password" {
   description = "Password of the root account. It is a string of 6 to 32 characters and is composed of letters, numbers, and underlines"
   type        = string
-  default     = ""
+  default     = "YourPassword123!"
 }
 
 variable "backup_period" {
@@ -92,17 +62,7 @@ variable "backup_time" {
 variable "tags" {
   description = "A mapping of tags to assign to the mongodb instance resource. "
   type        = map(string)
-  default     = {}
-}
-
-variable "instance_id" {
-  description = "`(Deprecated)` It has been deprecated from version 1.2.0 and use `existing_instance_id` instead. "
-  type        = string
-  default     = ""
-}
-
-variable "region" {
-  description = "The specification of the monitoring region."
-  type        = string
-  default     = ""
+  default = {
+    Name = "Mongodb"
+  }
 }

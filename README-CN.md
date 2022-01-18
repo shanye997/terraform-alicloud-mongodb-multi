@@ -45,7 +45,7 @@ module "mongodb" {
 
 ## 示例
 
-* [创建 Mongodb 完整示例](https://github.com/terraform-alicloud-modules/terraform-alicloud-mongodb-multi/tree/master/example)
+* [创建 Mongodb 完整示例](https://github.com/terraform-alicloud-modules/terraform-alicloud-mongodb-multi/tree/master/examples/complete)
 
 
 
@@ -74,7 +74,8 @@ a [provider issue](https://github.com/aliyun/terraform-provider-alicloud/issues/
 
 作者
 -------
-Created and maintained by maiqiao(bj090628@163.com)
+Created and maintained by Alibaba Cloud Terraform Team(terraform@alibabacloud.com)
+
 许可
 ----
 Apache 2 Licensed. See LICENSE for full details.
