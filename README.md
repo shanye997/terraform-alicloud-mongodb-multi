@@ -14,9 +14,10 @@ These types of resources are supported:
 
 ## Terraform versions
 
-This module requires Terraform 0.12 and Terraform Provider Alicloud 1.56.0+.
+This module requires Terraform 0.13 and Terraform Provider Alicloud 1.56.0+.
 
 ## Usage
+
 -----
 
 For new instance
@@ -59,7 +60,7 @@ resource "mongodb"  this {
 
 ## Examples
 
-* [complete](https://github.com/terraform-alicloud-modules/terraform-alicloud-mongodb-multi/tree/master/example)
+* [complete](https://github.com/terraform-alicloud-modules/terraform-alicloud-mongodb-multi/tree/master/examples/complete)
 
 
 ## Notes
@@ -88,7 +89,7 @@ a [provider issue](https://github.com/aliyun/terraform-provider-alicloud/issues/
 
 Authors
 ---------
-Created and maintained by maiqiao(bj090628@163.com) 
+Created and maintained by Alibaba Cloud Terraform Team(terraform@alibabacloud.com)
 
 License
 ----
